@@ -1,20 +1,34 @@
-// exercice 2.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    float sommeDargent;
+    float montantRembourse;
+    float tauxAnnuel;
+    int nDeMois = 0;
+    float tauxPayee = 0;
+    cout << "La somme d'argent:" << endl;
+    cin >> sommeDargent;
+    cout << "Le montant rembourse:" << endl;
+    cin >> montantRembourse;
+    cout << "Le taux d'interet annuel:" << endl;
+    cin >> tauxAnnuel;
+    cout << "la somme d'argent:" << sommeDargent << endl << "Le montant rembourse:" << montantRembourse << endl << "Le taux d'interet annuel:" << tauxAnnuel << endl;
+
+    float tauxMensuel = tauxAnnuel / 12;
+    cout << "Le taux d'interet mensuel:" << tauxMensuel << endl;
+
+    while (sommeDargent > 0) {
+        sommeDargent -= montantRembourse;
+        tauxPayee += sommeDargent * tauxMensuel / 100;
+        sommeDargent += sommeDargent * tauxMensuel / 100;
+        nDeMois += 1;
+    }
+
+    cout << "Le nombre de mois necessaires: " << nDeMois << endl;
+    cout << "Le taux total payee:" << tauxPayee << endl;
+
+
+        
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
