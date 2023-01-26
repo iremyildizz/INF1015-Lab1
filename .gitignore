@@ -1,0 +1,54 @@
+
+*.vsidx
+
+*.lock
+
+Labo 1/.vs/Labo 1/v17/.suo
+
+Labo 1/.vs/Labo 1/v17/Browse.VC.db
+
+Labo 1/.vs/Labo 1/v17/Browse.VC.db-shm
+
+Labo 1/.vs/Labo 1/v17/Browse.VC.db-wal
+
+Labo 1/.vs/Labo 1/v17/Browse.VC.opendb
+
+Labo 1/.vs/Labo 1/v17/ipch/AutoPCH/260cacd6d566d395/EXERCICE 2.ipch
+
+Labo 1/exercice 2/exercice 2.vcxproj
+
+Labo 1/exercice 2/exercice 2.vcxproj.filters
+
+Labo 1/exercice 2/exercice 2.vcxproj.user
+
+Labo 1/exercice 2/x64/Debug/exercice 2.log
+
+Labo 1/exercice 2/x64/Debug/exercice 2.obj
+
+Labo 1/exercice 2/x64/Debug/Lab.exe.recipe
+
+Labo 1/exercice 2/x64/Debug/Lab.ilk
+
+Labo 1/exercice 2/x64/Debug/Lab.tlog/CL.command.1.tlog
+
+Labo 1/exercice 2/x64/Debug/Lab.tlog/CL.read.1.tlog
+
+Labo 1/exercice 2/x64/Debug/Lab.tlog/CL.write.1.tlog
+
+Labo 1/exercice 2/x64/Debug/Lab.tlog/Lab.lastbuildstate
+
+Labo 1/exercice 2/x64/Debug/Lab.tlog/link.command.1.tlog
+
+Labo 1/exercice 2/x64/Debug/Lab.tlog/link.read.1.tlog
+
+Labo 1/exercice 2/x64/Debug/Lab.tlog/link.write.1.tlog
+
+Labo 1/exercice 2/x64/Debug/vc143.idb
+
+Labo 1/exercice 2/x64/Debug/vc143.pdb
+
+Labo 1/Labo 1.sln
+
+Labo 1/x64/Debug/Lab.exe
+
+Labo 1/x64/Debug/Lab.pdb
