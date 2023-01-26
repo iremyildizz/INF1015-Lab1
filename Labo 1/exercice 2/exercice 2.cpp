@@ -6,6 +6,13 @@ bool dansIntervalle(float numero, float borneSuperieure = INFINITY, float borneI
     return (numero > borneInferieure && numero < borneSuperieure);
 }
 
+void demandeDeValeur(float& valeurDemandee, string message, float borneSuperieure = INFINITY, float borneInferieure = 0) {
+    while (!dansIntervalle(valeurDemandee, borneSuperieure, borneInferieure)) {
+        cout << message << endl;
+        cin >> valeurDemandee;
+    }
+}
+
 int main()
 {
     float sommeDargent = 0.0;
@@ -13,19 +20,14 @@ int main()
     float tauxAnnuel = 0.0;
     int nDeMois = 0;
     float tauxPayee = 0.0;
+    string messageSommeDargent = "La somme d'argent qui est plus grand que 0:";
+    string messageMontantRembourse = "Le montant rembourse qui est plus grand que 0:";
+    string messageTauxAnnuel = "Le taux d'interet annuel qui est plus grand que 0 et plus petit que 100:";
 
-    while (!dansIntervalle(sommeDargent)) {
-        cout << "La somme d'argent qui est plus grand que 0:" << endl;
-        cin >> sommeDargent;
-    }
-    while (!dansIntervalle(montantRembourse)) {
-        cout << "Le montant rembourse qui est plus grand que 0:" << endl;
-        cin >> montantRembourse;
-    }
-    while (!dansIntervalle(tauxAnnuel, 100)) {
-        cout << "Le taux d'interet annuel qui est plus grand que 0 et plus petit que 100:" << endl;
-        cin >> tauxAnnuel;
-    }
+    demandeDeValeur(sommeDargent, messageSommeDargent);
+    demandeDeValeur(montantRembourse, messageMontantRembourse);
+    demandeDeValeur(tauxAnnuel, messageTauxAnnuel, 100);
+
     cout << "la somme d'argent:" << sommeDargent << endl << "Le montant rembourse:" << montantRembourse << endl << "Le taux d'interet annuel:" << tauxAnnuel << endl;
 
     float tauxMensuel = tauxAnnuel / 12;
