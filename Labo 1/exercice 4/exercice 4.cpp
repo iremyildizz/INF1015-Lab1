@@ -6,34 +6,40 @@ using namespace std;
 
 const float maxRandom = 1.0;
 const float minRandom = -1.0;
+const float pi        = 3.141593;
 
 
 float generator(float max, float min){
     return ((float(rand()) / float(RAND_MAX)) * (max - (min))) + (min);
 }
 
+bool estDansCercle(float x, float y, int rayon = 1) {
+    return (pow(x, 2) + pow(y, 2)) < rayon;
+}
 
-int main()
-{
-
-    cout << "Le nombre d'itérations souhaite: " << endl;
-    int nIterations;
-    cin >> nIterations;
+int compteurDeSucces(int iterations) {
     int compteur = 0;
-    for (int i = 0; i < nIterations; i++){
+    for (int i = 0; i < iterations; i++) {
         float x = generator(maxRandom, minRandom);
         float y = generator(maxRandom, minRandom);
 
-        float somme = pow(x, 2) + pow(y, 2);
-        if (somme < 1) {
+        if (estDansCercle(x, y))
             compteur += 1;
-        }
     }
-    float approximation = (float(compteur) / float(nIterations)) * 4;
+    return compteur;
+}
+
+int main()
+{
+    int nIterations;
+    cout << "Le nombre d'iterations souhaite: " << endl;
+    cin >> nIterations;
+    
+    float approximation = (float(compteurDeSucces(nIterations)) / float(nIterations)) * 4;
     cout.precision(6);
     cout << "L'approximation trouvee: " << fixed << approximation << endl;
-    float ecartRelatif = (3.141593 - approximation);
-    cout << "L'ecart relatif entre l'approximation trouvee et la valeur precise a 10^-6: " << fixed << abs(ecartRelatif) << endl;
 
+    float ecartRelatif = (pi - approximation);
+    cout << "L'ecart relatif: " << fixed << abs(ecartRelatif) << endl;
 }
 
