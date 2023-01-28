@@ -5,7 +5,7 @@
 
 using namespace std;
 
-struct motDictionnaire {
+struct MotDictionnaire {
     string mot;
     string nature;
     string definition;
@@ -13,13 +13,12 @@ struct motDictionnaire {
 
 int main()
 {
-    motDictionnaire mots[4] = {};
+    MotDictionnaire mots[4] = {};
 
     fstream newfile;
     newfile.open("dictionnaire.txt", ios::in); 
     if (newfile.is_open()) {
-        for (int i = 0; i < 4; i++)
-        {
+        for (int i = 0; i < 4; i++){
             string ligne;
             getline(newfile, ligne);
             istringstream iss(ligne);
@@ -36,5 +35,11 @@ int main()
         }
         newfile.close();
     }
+    MotDictionnaire motDictionnairePlusLong = {"","",""};
+    for (MotDictionnaire motDictionnaire : mots){  
+        if (motDictionnaire.mot.length() > motDictionnairePlusLong.mot.length())
+            motDictionnairePlusLong = motDictionnaire;
+    }
+    cout << motDictionnairePlusLong.mot << " (" << motDictionnairePlusLong.nature << ") " << " : " << motDictionnairePlusLong.definition << endl;
 }
 
