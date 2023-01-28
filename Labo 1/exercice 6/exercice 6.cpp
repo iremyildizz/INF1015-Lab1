@@ -4,6 +4,8 @@
 #include <sstream>
 
 using namespace std;
+const int nMotDictionnaire = 4;
+const string nomFichier = "dictionnaire.txt";
 
 struct MotDictionnaire {
     string mot;
@@ -11,14 +13,18 @@ struct MotDictionnaire {
     string definition;
 };
 
+bool comparerMots(string mot1, string mot2) {
+    return (mot1.length() > mot2.length());
+}
+
 int main()
 {
-    MotDictionnaire mots[4] = {};
+    MotDictionnaire mots[nMotDictionnaire] = {};
 
     fstream newfile;
-    newfile.open("dictionnaire.txt", ios::in); 
+    newfile.open(nomFichier, ios::in);
     if (newfile.is_open()) {
-        for (int i = 0; i < 4; i++){
+        for (int i = 0; i < nMotDictionnaire; i++){
             string ligne;
             getline(newfile, ligne);
             istringstream iss(ligne);
@@ -35,11 +41,12 @@ int main()
         }
         newfile.close();
     }
+
     MotDictionnaire motDictionnairePlusLong = {"","",""};
-    for (MotDictionnaire motDictionnaire : mots){  
-        if (motDictionnaire.mot.length() > motDictionnairePlusLong.mot.length())
+    for (MotDictionnaire motDictionnaire : mots)  
+        if (comparerMots(motDictionnaire.mot, motDictionnairePlusLong.mot)) 
             motDictionnairePlusLong = motDictionnaire;
-    }
+
     cout << motDictionnairePlusLong.mot << " (" << motDictionnairePlusLong.nature << ") " << " : " << motDictionnairePlusLong.definition << endl;
 }
 
