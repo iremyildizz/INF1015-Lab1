@@ -1,43 +1,35 @@
 #include <iostream>
 using namespace std;
+const int longeurTableau = 10;
+
+void afficherTableau(int liste[longeurTableau]) {
+	for (int i = 0; i < longeurTableau; i++)
+		cout << liste[i] << " ";
+}
 
 int main() {
-    const int longeurTableau = 10;
-    int switchNum;
+	int switchNum;
+	int tableau[longeurTableau];
 
-    int tableau[longeurTableau], i, nombre;
-    cout << "Entrer 10 chiffres aleatoires: ";
-    for (i = 0; i < longeurTableau; i++)
-    {
-        cin >> tableau[i];
-    }
+	cout << "Entrer 10 chiffres aleatoires: ";
+	for (int i = 0; i < longeurTableau; i++)
+		cin >> tableau[i];
 
+	cout << "Tableau non arrange : ";
+	afficherTableau(tableau);
 
-    cout << "Tableau non arrange : ";
-    for (i = 0; i < longeurTableau; i++)
-        cout << tableau[i] << " ";
-    cout << endl;
+	for (int i = 0; i < longeurTableau; i++) {
+		if (tableau[i] % 2 == 0)
+			continue;
+		for (int j = i + 1; j < longeurTableau; j++) {
+			if (tableau[j] % 2 == 0) {
+				switchNum = tableau[i];
+				tableau[i] = tableau[j];
+				tableau[j] = switchNum;
+			}
+		}
+	}
 
-
-    for (i = 0; i < longeurTableau; i++)
-    {
-        if (tableau[i] % 2 == 0)
-        {
-            continue;
-        }
-        for (int j = i + 1; j < longeurTableau; j++)
-        {
-            if (tableau[j] % 2 == 0)
-            {
-                switchNum = tableau[i];
-                tableau[i] = tableau[j];
-                tableau[j] = switchNum;
-            }
-        }
-    }
-
-
-    cout << "Tableau arrange : ";
-    for (i = 0; i < longeurTableau; i++)
-        cout << tableau[i] << " ";
+	cout << "\nTableau arrange : ";
+	afficherTableau(tableau);
 }
