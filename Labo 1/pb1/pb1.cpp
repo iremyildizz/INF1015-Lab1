@@ -1,8 +1,7 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
-int main()
-{
+int main() {
 	while (true) {
 		int nombre;
 		int diviseur = 2;

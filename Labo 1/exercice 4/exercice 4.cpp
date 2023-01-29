@@ -29,8 +29,7 @@ int compteurDeSucces(int iterations) {
     return compteur;
 }
 
-int main()
-{
+int main() {
     int nIterations;
     cout << "Le nombre d'iterations souhaite: " << endl;
     cin >> nIterations;

@@ -1,8 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int main()
-{
+int main() {
     const int longeurTableau = 10;
     int switchNum;
 

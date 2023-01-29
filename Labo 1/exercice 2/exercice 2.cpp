@@ -30,8 +30,7 @@ void predictionDePayement(float somme, float taux, float remboursement) {
 }
 
 
-int main()
-{
+int main() {
     float sommeDargent     = 0.0;
     float montantRembourse = 0.0;
     float tauxAnnuel       = 0.0;
